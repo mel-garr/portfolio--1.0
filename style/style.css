@@ -1,49 +1,340 @@
-*{
+body{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    color: white;
+    background-color: white;
+    scroll-behavior: smooth;
     font-family: Arial, Helvetica, sans-serif;
+    color: white;
 }
 
-
+p, a, h1, h2, h3, span, li{
+    color:black;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+}
 
 header{
     position: absolute;
-    display: flex;
-    top: 0;
     left: 0;
     right: 0;
-    background-color: rgba(40,45,52,1);
+    top: 0;
+    display: flex;
+    align-items: center;
     justify-content: space-between;
-    padding: 20px 30px;
+    padding: 10px 40px;
+    z-index: 999;
+    background-color: #4b4b4b5b;
+    backdrop-filter: blur(10px);
 }
 
-.logo{
+.head-left{
     display: flex;
-    gap: 10px;
-    font-size: 24px;
+    align-items: center;
 }
 
-header ul{
+.head-left img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: contain;
+    background-color: rgb(14, 17, 21);
+}
+
+.head-right{
     display: flex;
-    right: 0;
-    gap: 30px;
+    align-items: center;
 }
 
-header ul li{
-    list-style: none;
-    border: blue 1px solid;
-
-}
-
-header ul li a{
+.head-right a{
     text-decoration: none;
-    color: white;
-    font-size: 24px;
-    border: green 1px solid;
+    padding-left: 25px;
+    text-transform: uppercase;
+    font-size: 15px;
+    align-items: center;
 }
 
-header ul li a:hover{
-    background-color: red;
+.head-right label{
+    width:80px;
+    height: 30px;
+    position:relative;
+    display: block;
+    background-color: #ebebeb;
+    border-radius: 200px;
+    box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4), inset 0px -5px 15px rgba(255, 255, 255, 0.4) ;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.head-right label:after{
+    content: "";
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 2px;
+    left:2px;
+    background: linear-gradient(180deg, #ffcc89, #d88606);
+    border-radius: 180px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+}
+
+.head-right input{
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+.head-right input:checked + label{
+    background: #242424;
+}
+
+.head-right input:checked + label:after{
+    left: 75px;
+    transform: translateX(-100%);
+    background: linear-gradient(180deg, #777, #3a3a3a);
+}
+
+
+.head-right label:active::after{
+    width: 40px;
+}
+
+.head-right input:checked + label + body,
+.head-right input:checked + label + a
+{
+    background: #242424;
+}
+
+body.dark-mode{
+    background-color: black;
+    color:white;
+}
+body.dark-mode a,
+body.dark-mode p,
+body.dark-mode h1,
+{
+    color: white;
+}
+
+
+.head-right img{
+    width: 25px;
+    height: 25px;
+    margin-left: 10xp;
+    cursor: pointer;
+}
+
+
+.moon{
+    position: absolute;
+    left:50px;
+    top: 2px;
+    transition: 0.5s;
+    z-index: 20;
+    color: white;
+    display: none;
+}
+
+.sun{
+    position: absolute;
+    z-index: 20;
+    top: 1.5px;
+    left:2px;
+    transition: 0.5s;
+}
+
+body.dark-mode .moon{
+    display: block;
+}
+
+body.dark-mode .sun{
+    display: none;
+}
+
+.head-right div{
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+
+/* hero section */
+
+
+
+
+/* dark night */
+
+@keyframes move-clouds-back {
+    from{background-position: 0 0;}
+    to{background-position: -10000px 0;}
+}
+
+@keyframes move-twinkle-back {
+    from{background-color: 0 0;}
+    to{background-position: -10000px 5000px;}
+}
+
+.dark_night{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+}
+
+.stars, .twinklings, .clouds{
+    position: absolute;
+    top:0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: block;
+}
+
+.stars{
+    background: #000 url(../img/night/stars.png) repeat top center;
+    z-index: 0;
+    /* background: blue; */
+}
+
+.twinklings{
+    background: transparent url(../img/night/twinkling.png) repeat top center;
+    z-index: 1;
+    animation: move-twinkle-back 200s linear infinite;
+}
+
+.clouds{
+    background: transparent url(../img/night/clouds.png) repeat top center;
+    z-index: 2;
+    opacity: .4;
+    animation: move-clouds-back 200s linear infinite;
+}
+
+/* light-day */
+
+.light-day{
+    position: absolute;
+    top:0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: block;
+    z-index: 10;
+    background-color: #404552;
+    /* background: white; */
+}
+body.dark-mode .dark_night{
+    z-index: 11;
+}
+
+.clouds1{
+    background-image: url("../img/day/clouds_1.png");
+    animation: clouds1_loop1 20s infinite linear;
+}
+
+.clouds2{
+    background-image: url("../img/day/clouds_2.png");
+    animation: clouds2_loop2 20s infinite linear;
+}
+
+.clouds3{
+    background-image: url("../img/day/clouds_3.png");
+    animation: clouds3_loop3 20s infinite linear;
+}
+
+
+.clouds1,
+.clouds2,
+.clouds3{
+    background-repeat: repeat-x;
+    height: 500px;
+    position: absolute;
+    top:0;
+    right: 0;
+    left: 0;
+}
+
+@keyframes clouds1_loop1 {
+    to{
+        background-position: -1000px 0;
+    }
+}
+
+@keyframes clouds2_loop2 {
+    to{
+        background-position: -1000px 0;
+    }
+}
+
+@keyframes clouds3_loop3 {
+    to{
+        background-position: -1579px 0;
+    }
+}
+
+.hero-section{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero_info{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    z-index: 12;
+    top: 140px;
+    left:50px;
+}
+
+.hero_info h1{
+    font-size: 80px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    max-width: 500px;
+    text-transform: uppercase;
+
+}
+
+.hero_info p {
+    max-width: 400px;
+    font-size: 24px;
+}
+
+.hero_info button{
+    border: 2px solid black;
+    padding: 10px 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+
+body.dark-mode button{
+    background-color: black;
+    color: white;
+    border: 2px solid red;
+}
+
+
+.whatido{
+    font-size: 80px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 0;
+    position: absolute;
+    right: 20px;
+    bottom: 30px;
+    z-index: 12;
 }
