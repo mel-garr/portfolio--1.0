@@ -115,18 +115,34 @@ body.dark-mode{
 }
 body.dark-mode a,
 body.dark-mode p,
-body.dark-mode h1,
+body.dark-mode h1
 {
     color: white;
 }
 
 
-/* button{
+button{
     color:black;
-} */
+    background-color: white;
+    border: solid 3px black;
+    padding: 10px 40px;
+    cursor: pointer;
+    transition: 0.5s;
+    border-radius: 20px;
+}
+
+button:hover{
+    box-shadow: 0 0 30px black;
+}
 
 body.dark-mode button{
+    border: solid 1px white;
     color: white;
+    background-color: black;
+}
+
+body.dark-mode button:hover{
+    box-shadow: 0 0 15px white;
 }
 
 .head-right img{
@@ -321,9 +337,6 @@ body.dark-mode .dark_night{
     font-size: 24px;
 }
 
-.hero_info button{
-    background-color: ;
-}
 
 .whatido{
     font-size: 80px;
