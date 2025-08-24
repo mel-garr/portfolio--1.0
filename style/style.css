@@ -442,6 +442,7 @@ body.dark-mode .f_dive{
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     background: linear-gradient(135deg, #5a5f6b, #6e7583);
     border-radius: 15%;
+    max-width: 200px;
 }
 
 body.dark-mode .skill_card{
