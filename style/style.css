@@ -625,8 +625,25 @@ body.dark-mode .text_box{
 
 
 @media screen and (max-width: 600px) {
-    .timeline{
-        /* display: none; */
+    .timeline_container{
+        position: relative;
+        width: 100%;
+        left:0;
+        padding: 10px 15px;
+        box-sizing: border-box;
+    }
+    .text_box {
+        width: 100%;
+        position: relative;
+        padding: 15px;
+        white-space: normal;
+        /* white-space: nowrap; */
+    }
+
+    .text_box img,
+    .left_arrow,
+    .right_arrow{
+        display: none;
     }
 
     .timeline::after{
@@ -635,5 +652,77 @@ body.dark-mode .text_box{
 
     .timeline_container{
         width: 100%;
+        max-width: 600px;
     }
+    .timeline p,
+    .timeline h2,
+    small{
+        font-size: 22px;
+        line-height: 1.5;
+        word-break: break-word;
+    }
+
+}
+
+.logo_scroling{
+    width: 100%;
+}
+
+.scrool_ik{
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+}
+
+.first_slide
+{
+    display: inline-block;
+    gap:15px;
+    margin: 15px;
+    animation: 15s slide_logo infinite linear;
+}
+
+.second_slide{
+    display: inline-block;
+    gap:15px;
+    margin: 15px;
+    animation: 25s slide_logo_right infinite linear;
+}
+
+.logo_scroling img{
+    width: 60px;
+    height: 60px;
+    padding: 0 15px;
+}
+
+
+body.dark-mode .first_slide img,
+body.dark-mode .second_slide img{
+    background-color: white;
+}
+
+@keyframes slide_logo {
+    from {
+        transform :translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+
+@keyframes slide_logo_right {
+    from {
+        transform :translateX(-100%);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
+.logo_scroling p{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
 }
