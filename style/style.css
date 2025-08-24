@@ -491,13 +491,41 @@ body.dark-mode .skill_card{
     padding: 10px 50px;
     position: relative;
     width: 50%;
-    background: linear-gradient(135deg, #5a5f6b, #6e7583);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    animation: movedown 1s linear forwards;
+    opacity: 0;
 }
 
-body.dark-mode .timeline_container{
-    background: linear-gradient(135deg, #1c1c1c, #333333);
-    border: 2px solid rgba(255, 255, 255, 0.3);
+@keyframes movedown{
+    0% {
+        opacity: 1;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.timeline_container:nth-child(1){
+    animation-delay: 0s;
+}
+.timeline_container:nth-child(2){
+    animation-delay: 1s;
+}
+.timeline_container:nth-child(3){
+    animation-delay: 2s;
+}
+.timeline_container:nth-child(4){
+    animation-delay: 3s;
+}
+.timeline_container:nth-child(5){
+    animation-delay: 4s;
+}
+.timeline_container:nth-child(6){
+    animation-delay: 5s;
+}
+.timeline_container:nth-child(7){
+    animation-delay: 6s;
 }
 
 .text_box{
@@ -512,21 +540,100 @@ body.dark-mode .text_box{
     background: linear-gradient(135deg, #2f323a, #454954);
 }
 
-/* .left_t{
-    left : 0;
+.left_t{
+    left : -5%;
 }
 
 .right_t{
-    left: 50%;
-} */
+    left: 55%;
+}
 
 
 .text_box img{
     position: absolute;
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    right: -20px;
+    right: -80px;
     top: 32px;
     z-index: 13;
+}
+
+.right_t img{
+    left: -80px;
+}
+
+.timeline::after{
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    top:0;
+    left: 55%;
+    margin-left: -3px;
+    z-index: -1;
+    background-color: #fff;
+    animation: moveline 6s linear forwards;
+}
+
+@keyframes moveline{
+    0%{
+        height: 0;
+    }
+    100%{
+        height: 100%;
+    }
+}
+
+.text_box h2{
+    font-weight: 600;   
+}
+
+.text_box small{
+    display: inline-block;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.text_box p {
+    font-size: 18px;
+}
+
+.right_arrow{
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 45px;
+    z-index: 12;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid #7d8596ed;
+    left: -15px;
+}
+
+.left_arrow{
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 45px;
+    z-index: 12;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid #7d8596ed;
+    right: -15px;
+}
+
+
+@media screen and (max-width: 600px) {
+    .timeline{
+        /* display: none; */
+    }
+
+    .timeline::after{
+        display: none;
+    }
+
+    .timeline_container{
+        width: 100%;
+    }
 }
