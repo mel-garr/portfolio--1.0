@@ -7,18 +7,21 @@
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
     <link rel="stylesheet" href="style/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
 </head>
 <body>
     <div class="container">
         <header>
             <div class="head-left">
                 <img src="img/logo/logo.jpg" alt="logo for me">
-                <p>Game Changer</p>
+                <a href="#">Game Changer</a>
+                <!-- <p>Game Changer</p> -->
             </div>
             <div class="head-right">
-                <a href="">about</a>
-                <a href="">Projects</a>
-                <a href="">Contact</a>
+                <a href="#about_me">about</a>
+                <a href="#projects">Projects</a>
+                <a href="#contactr">Contact</a>
                 <div>
                     <input type="checkbox" id="darkmode-toggle">
                     <label for="darkmode-toggle">
@@ -49,7 +52,7 @@
                 <p class="innovate2"></p>
             </div>
         </section>
-        <section class="about_me">
+        <section class="about_me" id="about_me">
             <div class="about_intro">
                 <div class="f_dive main_fdive">
                     <h1>ABOUT ME</h1>
@@ -274,7 +277,7 @@
             </div>
         </section>
         
-        <section class="Projects">
+        <section class="Projects" id="projects">
             <h2 class="project_title">SOME OF MY <br> PROJECTS</h2>
             <div class="project_swiper project_container swiper">
                 <div class="swiper-wrapper">
@@ -334,10 +337,21 @@ Features immersive visuals, smooth animations, and a modern storytelling experie
         </div>
         </section>
 
-        <footer class="">
-            Get in Touch:
-            
-        </footer>
+        <section class="contact" id="contactr">
+            <p class="contact_title">Get in Touch</p>
+            <div class="contact_links">
+                    <button id="copyEmail" class="contact_link">
+            <i class="fa-solid fa-envelope"></i> Gmail
+                    </button>
+                <a href="https://www.linkedin.com/in/elgarraoui-mohamed-3b2b0437b/" target="_blank" class="contact_link">
+                    <i class="fa-brands fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://github.com/mel-garr" target="_blank" class="contact_link">
+                    <i class="fa-brands fa-github"></i> GitHub
+                </a>
+            </div>
+        </section>
+
     </div>
 
     <script src="script/swiper-bundle.min.js"></script>

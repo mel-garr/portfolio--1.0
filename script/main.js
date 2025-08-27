@@ -83,3 +83,15 @@ const swiperproject = new Swiper('.swiper', {
   },
 
 });
+
+
+const copyButton = document.getElementById("copyEmail");
+copyButton.addEventListener("click", () => {
+    navigator.clipboard.writeText("mohamedelgarraoui13@gmail.com")
+        .then(() => {
+            alert("Email copied to clipboard!");
+        })
+        .catch(() => {
+            alert("Failed to copy email.");
+        });
+});
