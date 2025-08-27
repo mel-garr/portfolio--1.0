@@ -49,3 +49,37 @@ function textTypingEffect2(element, text, i = 0, j = 0){
 }
 
 textTypingEffect2(jobs, texts_to_write);
+
+
+const swiperproject = new Swiper('.swiper', {
+
+  loop: true,
+    slidesPreView: 'auto',
+    centeredSlides: 'auto',
+    spaceBetween: 16,
+    grabCursor: true,
+    speed: 600,
+    effect: 'coverflow',
+    coverflowEffect:{
+        // rotate: -90,
+        depth: 600,
+        modifier: .5,
+        slideShadows: false,
+    },
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+
+});

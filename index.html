@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <link rel="stylesheet" href="style/swiper-bundle.min.css">
 </head>
 <body>
     <div class="container">
@@ -271,16 +273,74 @@
                 </div>
             </div>
         </section>
-        <section class="my_projects">
-            <h2>Projects</h2>
-            <p>showcasing some of the projects i built so far !!</p>
+        
+        <section class="Projects">
+            <h2 class="project_title">SOME OF MY <br> PROJECTS</h2>
+            <div class="project_swiper project_container swiper">
+                <div class="swiper-wrapper">
+                    <div class="project_card swiper-slide">
+                        <a href="https://react-tailwinf-101.vercel.app/" target="_blank">
+                            <img src="img/img-project/robot.png" alt="" class="proeject_img">
+                        </a>
+                        <h3 class="projecct_title">NeoMail</h3>
+                        <div class="tech_used">
+                            <span class="tag-html">HTML</span>
+                            <span class="tag-css">CSS</span>
+                            <span class="tag-react">React JS</span>
+                            <span class="tag-spline">Spline</span>
+                            <span class="tag-js">JavaScript</span>
+                            <span class="tag-tailwind">TailwindCSS</span>
+                        </div>
+                        <p class="about_project">Modern hero section with bold typography, smooth animations, and an interactive 3D element.
+                            Designed to highlight a product with clear calls to action and a professional layout.</p>
+                            <a href="https://react-tailwinf-101.vercel.app/" class="project-link" target="_blank">View Project</a>
+                        </div>
+                    <div class="project_card swiper-slide">
+                        <a href="https://blandingpage.vercel.app/" target="_blank">
+                            <img src="img/img-project/school.png" alt="" class="proeject_img">
+                        </a>
+                        <h3 class="projecct_title">Campus101</h3>
+                        <p class="tech_used">
+                            <span class="tag-html">HTML</span>
+                            <span class="tag-css">CSS</span>
+                            <span class="tag-js">JavaScript</span>
+                        </p>
+                        <p class="about_project">
+                            Responsive website designed for a school/university, showcasing courses, campuses, and facilities.
+                            Features interactive navigation, student testimonials, and clear calls-to-action.
+                            Focused on providing an engaging and informative user experience.
+                        </p>
+                        <a href="https://blandingpage.vercel.app/" class="project-link" target="_blank">View Project</a>
+                    </div>
+                    <div class="project_card swiper-slide">
+                        <a href="https://gameplatformweb.vercel.app/" target="_blank">
+                            <img src="img/img-project/gamingweb.png" alt="" class="proeject_img">
+                        </a>
+                        <h3 class="projecct_title">PixelCraft</h3>
+                        <p class="tech_used">
+                            <span class="tag-html">HTML</span>
+                            <span class="tag-css">CSS</span>
+                            <span class="tag-js">JavaScript</span>
+                        </p>
+                        <p class="about_project">Creative website recreation inspired by Zentry's award-winning design.
+Features immersive visuals, smooth animations, and a modern storytelling experience.</p>
+                        <a href="https://gameplatformweb.vercel.app/" class="project-link" target="_blank">View Project</a>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
         </section>
-        <footer class="">
 
+        <footer class="">
+            Get in Touch:
+            
         </footer>
     </div>
 
-
+    <script src="script/swiper-bundle.min.js"></script>
     <script src="script/main.js"></script>
 </body>
 </html>
